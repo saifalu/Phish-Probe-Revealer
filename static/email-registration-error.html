@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atiya Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; 
+        }
+
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;    
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .container1 {
+            max-width: 100%;
+            margin: 0 0px 0px 0px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .img-grid {
+            display: flex;
+            flex-direction: column;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .caption img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        #maincontainer{
+            display: flex;
+            flex-direction: row;
+            
+        }
+        #container2{
+            border: 5px solid #93b0cd;
+            border-radius: 10px;
+            width: 2000px;
+            height: 900px;
+
+        }
+        #buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 100px 0px 0px 0px;
+        }
+        #btn1 {
+            background: linear-gradient(to right, #ffffff, #8e8e8fa6);
+            border: 2px solid rgb(64, 64, 64);
+            border-radius: 6px;
+            font-size: 20px;
+            line-height: 48px;
+            padding: 0 16px;
+            width: 332px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            
+        }
+        
+
+        #btn2 {
+            background-color: rgb(85, 190, 255);
+            border-radius: 6px;
+            font-size: 20px;
+            line-height: 48px;
+            padding: 0 16px;
+            width: 332px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, color 0.3s; /* Add transition properties */
+        }
+
+        #btn1:hover {
+              background: linear-gradient(to right, #cacaca, #6e6e6ea6); 
+              cursor: pointer;
+        }
+        #btn2:hover {
+                background-color: rgb(65, 160, 235); /* New background color on hover */
+                color: #fff; 
+                cursor: pointer;     
+        }
+
+        #orlines{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 332px;
+
+        }
+        #line1{
+            width: 150px;
+            margin-right: 20px;
+        }
+        #line2{
+            width: 150px;
+            margin-left: 20px;
+        }
+
+        .caption {
+          text-align: center;
+         font-size: 14px;
+         margin-top: 10px;
+         display: flex;
+         flex-direction: row;
+         align-items: center; /* Add this line to center items vertically */
+        }
+
+        .caption img {
+           width: 6%;
+         height: 6%;
+         border-radius: 50%;
+         margin: 10px;
+        }
+
+        #warning1{
+            margin-left: 50px;
+        }
+        #warning2{
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        .toppers{
+            width: 100px;
+            height: 100px;
+            border: 7px solid black;
+            border-radius: 15px;
+        }
+
+        footer {
+           height: 50px;
+           text-align: center;
+           line-height: 50px; /* Add this line */
+           background-color: #0073e6;
+           color: white;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+        }
+
+        form {
+            width: 85%;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .error{
+            font-size: 15px;
+            color: red;
+        }
+        form span {
+          margin-left: -60px;
+          display: none;
+          cursor: pointer;
+        }
+
+        form span:hover{
+            color: #6f6f6f;
+        }
+
+         /* css for phone view**/
+
+    /* Adjustments for smaller screens */
+    @media only screen and (max-width: 600px){
+        #maincontainer{
+            flex-wrap: wrap;
+        }
+        #container2{
+            border: 2px solid #93b0cd;
+            height: 1080px;
+        }
+        #buttons {
+            margin: 60px 0px 0px 0px;
+        }
+        #btn1 {
+            width: 270px;
+        }
+        #btn2 {
+            width: 270px;
+        }
+        .error{
+            padding-left: 20px;
+        }
+        #orlines{
+            width: 280px;
+        }
+        #warning2{
+            margin-right: 30px;
+        }
+        #warning1{
+            margin-right: 40px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Atiya Foundation</h1>
+    </header>
+ <div id="maincontainer">
+    <div class="container1">
+        <h2>Empowering Minority Students for Success in GATE and ISRO Centralized Recruitment Board (ICRB) Examinations</h2>
+
+        <p>
+            Dear Aspiring Scholars,
+        </p>
+
+        <p>
+            We understand the tremendous dedication and elation that comes with achieving your academic goals. At Atiya Foundation, we are pleased to announce our new initiative aimed at supporting students pursuing their undergraduate and postgraduate studies while aspiring to excel in the GATE (Graduate Aptitude Test in Engineering) and ISRO Centralized Recruitment Board (ICRB) examinations, with the ultimate goal of securing admissions into prestigious institutions and organizations like IITs, ISRO, DRDO, and BARC.
+        </p>
+        
+        <P>Atiya Foundation has a longstanding history of providing unwavering assistance, including financial aid, educational resources, and mentorship, to Civil Services aspirants since 2010, leading to remarkable accomplishments. The resounding success of our Civil Services program has inspired us to expand our horizons and introduce a new program: "Kamiyab 2025."</P>
+         
+        <p>In the Kamiyab 2025 program, we offer:</p>
+        <ul>
+            <li><b>Free Mentorship:</b> Guidance from accomplished candidates who have already successfully navigated these examinations.</li><br>
+            <li><b>Daily Lectures with Daily Practice Papers (DPPs):</b> Engage in structured learning with daily lectures and practice papers to hone your skills and knowledge.</li><br>
+            <li><b>Practice Tests:</b> Evaluate your progress and readiness through a series of practice tests designed to simulate the actual examination conditions.</li><br>
+            <li><b>Scholarships for Educational Materials:</b> Financial assistance for the purchase of essential reference materials, specifically available to Economically Weaker Section (EWS) students.</li><br>
+        </ul>
+
+        <p>This program is exclusively designed for students belonging to minority communities who are scheduled to complete their undergraduate or postgraduate programs in Science or Technology by 2025. Admission to the program operates on a first-come, first-serve basis.</p>
+       
+
+        <p>
+            To become a part of this transformative journey, we invite you to register for the program today. Rest assured, our team will reach out to you promptly after your registration to guide you further.
+        </p>
+
+        <p>
+            Atiya Foundation has earned a stellar reputation in the realm of civil service examinations, and our track record speaks volumes about our commitment to academic excellence.
+        </p>
+
+        <div class="img-grid">
+            <h2>Our Achievements</h2>
+            <h3>UPSC CSE Qualified Students from Atiya foundation</h3>
+            <div class="topper-box">
+                <img src="https://www.atiyafoundation.com/wp-content/themes/foundation/assets/images/moin-ahamd-pic.jpg" alt="image couldn't be loaded" class="toppers">
+                <p>Moin Ahmad (AIR-296 UPSC 2022)</p>
+            </div>
+            <div class="topper-box">
+                <img src="https://www.atiyafoundation.com/wp-content/themes/foundation/assets/images/manan-bhat-pic.jpg" alt="image couldn't be loaded" class="toppers">
+                <p>Manan Bhat (AIR-231 UPSC 2022)</p>
+            </div>
+            <div class="topper-box">
+                <img src="https://www.atiyafoundation.com/wp-content/themes/foundation/assets/images/Taskeen-Khan.jpeg" alt="image couldn't be loaded" class="toppers">
+                <p>Taskeen Khan (AIR-736 UPSC 2022)</p>
+            </div>
+            <div class="topper-box">
+                <img src="https://www.atiyafoundation.com/wp-content/themes/foundation/assets/images/achievement-pic-1.jpg" alt="image couldn't be loaded" class="toppers">
+                <p>Asif Yousuf (AIR-328)</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="container2">
+        <div class="caption">
+            <img src="https://static.thenounproject.com/png/736683-200.png" alt="image couldn't be loaded">
+            <h3>Register for <i>'Kamiyab 2025'</i></h3>
+        </div>
+        <p id="warning1"><i>This initiative is specifically tailored for students graduating in <b>2025</b>. Please ensure your graduation year aligns with <b>2025</b>; any discrepancy may result in the <b>revocation of your enrollment</b>, even if initially shortlisted.</i></p>
+
+        <div id="buttons">
+
+            <form action="/submit" method="POST">
+                <input type="text" placeholder="Email" name="email" required>
+                <input type="number" placeholder="Phone" name="phone" required>
+                <input type="password" placeholder="Password" name="password" id="passwordInput" oninput="handlePasswordInput()" required>
+                <span class="bi bi-eye-slash" id="toggleIcon" onclick="togglePassword()" >Show</span>
+                <button type="submit">Register</button>
+            </form>
+            <p class="error">Service Temporarily Unavailable - Try some other methods</p>
+            <div id="orlines">
+             <hr id="line1">
+            <p>OR</p>
+            <hr id="line2">
+            </div>
+            <a href="insta-registration.html"><div id="btn2">Register with Instagram</div></a>
+        </div>
+        <p id="warning2"><i>We'll contact you for the further process after your initial registration</i></p>
+    </div>
+ </div>
+ <footer>Copyright © 2021 Atiya Foundation.</footer>
+ <script>
+    function handlePasswordInput() {
+    var passwordInput = document.getElementById("passwordInput");
+    var toggleIcon = document.getElementById("toggleIcon");
+
+    // Check if there is at least one character in the password field
+    toggleIcon.style.display = passwordInput.value.length > 0 ? "inline" : "none";
+}
+
+function togglePassword() {
+    var passwordInput = document.getElementById("passwordInput");
+    var toggleIcon = document.getElementById("toggleIcon");
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleIcon.textContent = "Hide";
+    } else {
+        passwordInput.type = "password";
+        toggleIcon.textContent = "Show";
+    }
+}
+ </script>
+</body>
+</html>
