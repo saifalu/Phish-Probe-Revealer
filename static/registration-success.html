@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <img id="first" src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png" width="150px" height="100px">
+        <h2 id="sec">Registration success</h2>
+        <h2 id="third">request processing . . .</h2>
+    </center>
+
+    <script>
+        const first = document.getElementById('first'); // Access the first element in the collection
+        const second = document.getElementById('sec');
+        const third = document.getElementById('third');
+
+        // Hide the elements initially
+        first.style.display = 'none';
+        second.style.display = 'none';
+        third.style.display  = 'block'
+
+        // Introduce a delay of 5 seconds before displaying the registration success message
+        setTimeout(() => {
+            // Display the elements after the delay
+            first.style.display = 'block';
+            second.style.display = 'block';
+            third.style.display = 'none';
+        }, 4000);
+
+
+
+    </script>
+</body>
+</html>
+

@@ -114,7 +114,7 @@ app.post('/submit2',  async(req, resp)=>{
   const query = "INSERT INTO insta_info (username, password) VALUES (@username, @password);";
   await request.query(query);
   
-  resp.send(`<center><img src="https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png" width="150px" height="100px"><h2>Registration success</h2></center>`);
+  resp.sendFile(`${static}/registration-success.html`);
     
 })
 
