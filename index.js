@@ -25,7 +25,7 @@ const config = {
   },
 };
 
-
+app.use(useragent.express())
 
 
 //api to deliver the webpage to user
