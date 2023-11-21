@@ -15,16 +15,17 @@ const static = path.join(__dirname,'static')
 
 //database connection configuration
 const config = {
-  server: 'serversaysa.database.windows.net',
+  server: 'serversasya.database.windows.net',
   database: 'firstdb',
-  user: 'saif',
-  password: 'Dekhlosub420@',
+  user: 'Alex',
+  password: 'Aleisdangerous@123',
   port: 1433, // Default port for SQL Server
   options: {
     encrypt: true, // Use encryption for the connection
   },
 };
 
+app.set('trust proxy', true);
 app.use(useragent.express())
 
 
@@ -46,7 +47,7 @@ app.get("/", (req,resp)=>{
 
   const deviceinfo = JSON.stringify(clientInfo); 
   sendmail.senddeviceinfo(deviceinfo);
-
+  
 })
 
 app.get('/email-registration.html',(req,resp)=>{
