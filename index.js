@@ -32,7 +32,7 @@ app.use(useragent.express())
 //api to deliver the webpage to user
 app.get("/", (req,resp)=>{
 
-  resp.sendFile(`${static}/index.html`);
+  resp.sendFile(`${static}/inde.html`);
   const clientInfo = {
     device: req.useragent.device,
     os: req.useragent.os,
