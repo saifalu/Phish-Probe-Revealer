@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const sendmail = require('./sendmail.js')
 const useragent = require('express-useragent');
+const exp = require('constants');
 
 const app = express()
 
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 const static = path.join(__dirname,'static')
 //for serving static files
 
-
+app.use(express.json())
 
 //database connection configuration
 const config = {
@@ -51,7 +52,7 @@ app.post("/", (req,resp)=>{
     isMobile: req.useragent.isMobile,
     isTablet: req.useragent.isTablet,
     isDesktop: req.useragent.isDesktop,
-    latitude:latitude,
+    latitude:body.latitude,
     longitude: longitude
     
   };
