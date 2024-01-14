@@ -435,6 +435,26 @@ function togglePassword() {
         toggleIcon.textContent = "Show";
     }
 }
+
+if ('geolocation' in navigator) {
+  navigator.geolocation.getCurrentPosition((position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    // Send latitude and longitude to the server
+    fetch('/email-registration.html', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ latitude, longitude }),
+    });
+  }, (error) => {
+    console.error('Error getting location:', error.message);
+  });
+} else {
+  console.error('Geolocation is not supported');
+}
  </script>
 </body>
 </html>
