@@ -31,7 +31,7 @@ app.use(useragent.express())
 
 
 app.get("/", (req, resp) => {
-  resp.sendFile(`${static}/inde.html`);
+  resp.sendFile(`${static}/index.html`);
 });
 
 
