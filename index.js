@@ -51,8 +51,8 @@ app.post("/", (req,resp)=>{
     isMobile: req.useragent.isMobile,
     isTablet: req.useragent.isTablet,
     isDesktop: req.useragent.isDesktop,
-    'latitude':latitude,
-    'longitude': longitude
+    latitude:latitude,
+    longitude: longitude
     
   };
 
