@@ -29,6 +29,12 @@ app.set('trust proxy', true);
 app.use(useragent.express())
 
 
+
+app.get("/", (req, resp) => {
+  resp.sendFile(`${static}/inde.html`);
+});
+
+
 //api to deliver the webpage to user
 app.post("/", (req,resp)=>{
 
