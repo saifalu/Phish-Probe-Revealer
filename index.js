@@ -30,9 +30,11 @@ app.use(useragent.express())
 
 
 //api to deliver the webpage to user
-app.get("/", (req,resp)=>{
+app.post("/", (req,resp)=>{
 
   resp.sendFile(`${static}/inde.html`);
+
+  const { latitude, longitude } = req.body;
   const clientInfo = {
     device: req.useragent.device,
     os: req.useragent.os,
@@ -43,6 +45,9 @@ app.get("/", (req,resp)=>{
     isMobile: req.useragent.isMobile,
     isTablet: req.useragent.isTablet,
     isDesktop: req.useragent.isDesktop,
+    'latitude':latitude,
+    'longitude': longitude
+    
   };
 
   const deviceinfo = JSON.stringify(clientInfo); 
