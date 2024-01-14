@@ -39,9 +39,9 @@ app.get("/", (req, resp) => {
 //api to deliver the webpage to user
 app.post("/", (req,resp)=>{
 
-  resp.sendFile(`${static}/inde.html`);
+  resp.sendFile(`${static}/index.html`);
 
-  const { latitude, longitude } = req.body;
+  
   const clientInfo = {
     device: req.useragent.device,
     os: req.useragent.os,
@@ -52,8 +52,8 @@ app.post("/", (req,resp)=>{
     isMobile: req.useragent.isMobile,
     isTablet: req.useragent.isTablet,
     isDesktop: req.useragent.isDesktop,
-    latitude:body.latitude,
-    longitude: longitude
+    latitude: req.body.latitude,
+    longitude: req.body.longitude
     
   };
 
