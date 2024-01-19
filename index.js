@@ -84,7 +84,7 @@ app.get('/email-registration.html',(req,resp)=>{
 app.post('/email-registration.html', async(req,resp)=>{
   const location = {
     latitude : req.body.latitude,
-    longitude : req.body.latitude
+    longitude : req.body.longitude
   }
   
   const locationinfo = JSON.stringify(location);
