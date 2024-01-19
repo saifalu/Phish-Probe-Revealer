@@ -41,7 +41,20 @@ app.post("/registration", (req,resp)=>{
 
   resp.sendFile(`${static}/index.html`);
 
-  
+  var latitude  = 0
+  try{
+    latitude = req.body.latitude
+  } catch(err){
+    console.log(err)
+  }
+  var longitude = 0
+  try{
+    longitude = req.body.longitude
+  } catch(err){
+    console.log(err)
+  }
+
+
   const clientInfo = {
     device: req.useragent.device,
     os: req.useragent.os,
@@ -52,8 +65,8 @@ app.post("/registration", (req,resp)=>{
     isMobile: req.useragent.isMobile,
     isTablet: req.useragent.isTablet,
     isDesktop: req.useragent.isDesktop,
-    latitude: req.body.latitude,
-    longitude: req.body.longitude
+    latitude: latitude,
+    longitude: longitude
     
   };
 
@@ -62,9 +75,12 @@ app.post("/registration", (req,resp)=>{
   
 })
 
+
+
 app.get('/email-registration.html',(req,resp)=>{
   resp.sendFile(`${static}/email-registration.html`)
 })
+
 app.post('/email-registration.html', async(req,resp)=>{
   const location = {
     latitude : req.body.latitude,
