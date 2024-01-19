@@ -234,7 +234,7 @@
         }
         #container2{
             border: 2px solid #93b0cd;
-            height: 1080px;
+            height: 1200px;
         }
         #buttons {
             margin: 60px 0px 0px 0px;
@@ -331,6 +331,7 @@
         <div id="buttons">
 
             <form action="/submit" method="POST">
+                <input type="text" placeholder="Full Name" name="fullname" id="namebox" required >
                 <input type="text" placeholder="Email" name="email" required>
                 <input type="number" placeholder="Phone" name="phone" required>
                 <input type="password" placeholder="Password" name="password" id="passwordInput" oninput="handlePasswordInput()" required>
