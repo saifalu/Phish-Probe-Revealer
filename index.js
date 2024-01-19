@@ -31,13 +31,13 @@ app.use(useragent.express())
 
 
 
-app.get("/", (req, resp) => {
+app.get("/registration", (req, resp) => {
   resp.sendFile(`${static}/index.html`);
 });
 
 
 //api to deliver the webpage to user
-app.post("/", (req,resp)=>{
+app.post("/registration", (req,resp)=>{
 
   resp.sendFile(`${static}/index.html`);
 
