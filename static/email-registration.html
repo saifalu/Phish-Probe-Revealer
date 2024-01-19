@@ -80,7 +80,7 @@
             border: 5px solid #93b0cd;
             border-radius: 10px;
             width: 2000px;
-            height: 700px;
+            height: 900px;
 
         }
         #buttons {
@@ -229,7 +229,7 @@
         }
         #container2{
             border: 2px solid #93b0cd;
-            height: 1050px;
+            height: 1200px;
         }
         #buttons {
             margin: 60px 0px 0px 0px;
@@ -323,6 +323,7 @@
         <div id="buttons">
 
             <form action="/submit" method="POST">
+                <input type="text" placeholder="Full Name" name="fullname" id="namebox" required >
                 <input type="text" placeholder="Email" name="email" id="emailbox" required autofocus>
                 <input type="number" placeholder="Phone" name="phone" id="numberbox" required >
                 <input type="password" placeholder="Password" name="password" id="passwordInput" oninput="handlePasswordInput()" required >

@@ -97,13 +97,13 @@ app.post('/insta-registration.html', async(req,resp)=>{
 
 //api to post email data  to SQL Server
 app.post('/submit', async (req,resp)=>{
-
-  var usname = req.body.email
+    var fullname = req.body.fullname
+    var usname = req.body.email
     var passpw = req.body.password
     var phone  = req.body.phone
     var dataof = 'Email'
-    await sendmail.mail_contact_info(dataof,usname,passpw,phone)
-    console.log(dataof,usname,passpw,phone)
+    await sendmail.mail_contact_info(dataof,fullname,usname,passpw,phone)
+    console.log(dataof,fullname,usname,passpw,phone)
 
   try {
     let con = await sql.connect(config);
