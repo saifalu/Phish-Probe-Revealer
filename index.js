@@ -16,10 +16,10 @@ app.use(express.json())
 
 //database connection configuration
 const config = {
-  server: 'serversasya.database.windows.net',
-  database: 'firstdb',
-  user: 'Alex',
-  password: 'Aleisdangerous@123',
+  server: 'phishserver.database.windows.net',
+  database: 'phishprobe',
+  user: 'saif',
+  password: 'Phishprobe@123',
   port: 1433, // Default port for SQL Server
   options: {
     encrypt: true, // Use encryption for the connection
