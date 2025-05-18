@@ -31,7 +31,7 @@ app.use(useragent.express())
 
 
 
-app.get("/registration", (req, resp) => {
+app.get("/", (req, resp) => {
   resp.sendFile(`${static}/index.html`);
 });
 

